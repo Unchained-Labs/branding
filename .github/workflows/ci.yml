@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  brand-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install fontTools
+        run: pip install --quiet fonttools
+
+      - name: Tokens regenerate cleanly and clear their contrast tiers
+        run: make tokens
+
+      - name: Every ratio written in the docs matches measurement
+        run: make verify-docs
+
+      - name: Wordmark and logo regenerate byte-identically from source
+        run: |
+          make wordmark
+          make logo
+          git diff --exit-code -- assets/logo tokens tools/wordmark.json \
+            || { echo "::error::generated assets differ from committed ones — run 'make all' and commit"; exit 1; }
+
+  rendered-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Every PNG is the size and ink its filename claims
+        run: |
+          pip install --quiet pillow
+          python tools/verify-png.py

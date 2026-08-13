@@ -1,0 +1,35 @@
+/* Unchained Labs — Tailwind v4 theme block.
+ * Generated from tokens/tokens.css by tools/build-tokens.py. Do not hand-edit.
+ * Import AFTER tokens.css so the custom properties resolve.
+ */
+@import "tailwindcss";
+
+@theme {
+  --color-ul-bg: var(--ul-bg);
+  --color-ul-bg-raised: var(--ul-bg-raised);
+  --color-ul-bg-inset: var(--ul-bg-inset);
+  --color-ul-line: var(--ul-line);
+  --color-ul-line-strong: var(--ul-line-strong);
+  --color-ul-heading: var(--ul-heading);
+  --color-ul-body: var(--ul-body);
+  --color-ul-muted: var(--ul-muted);
+  --color-ul-faint: var(--ul-faint);
+  --color-ul-accent: var(--ul-accent);
+  --color-ul-accent-dim: var(--ul-accent-dim);
+  --color-ul-accent-wash: var(--ul-accent-wash);
+  --color-ul-on-accent: var(--ul-on-accent);
+  --color-ul-up: var(--ul-up);
+  --color-ul-warn: var(--ul-warn);
+  --color-ul-down: var(--ul-down);
+  --color-ul-up-wash: var(--ul-up-wash);
+  --color-ul-warn-wash: var(--ul-warn-wash);
+  --color-ul-down-wash: var(--ul-down-wash);
+
+  --font-display: var(--ul-font-display);
+  --font-body: var(--ul-font-body);
+  --font-mono: var(--ul-font-mono);
+
+  --radius-ul-sm: var(--ul-radius-sm);
+  --radius-ul: var(--ul-radius);
+  --radius-ul-lg: var(--ul-radius-lg);
+}

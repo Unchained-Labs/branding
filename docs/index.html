@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand system — Unchained Labs</title>
+<meta name="description" content="Chain Teal on Midnight Navy. The measured brand system behind graphlint, decorrelate, preflight, authsweep and workflow-hub.">
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="assets/tokens.css">
+<link rel="stylesheet" href="assets/brand.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  /* page-local: the swatch grid is specific to this site */
+  .ramp { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: var(--ul-space-3); }
+  .chip { border: 1px solid var(--ul-line); border-radius: var(--ul-radius); overflow: hidden; background: var(--ul-bg-raised); }
+  .chip .fill { height: 64px; display: block; }
+  .chip .meta { padding: var(--ul-space-3); font-family: var(--ul-font-mono); font-size: var(--ul-text-xs); line-height: 1.5; }
+  .chip .meta b { color: var(--ul-heading); font-weight: 500; display: block; }
+  .chip .meta span { color: var(--ul-muted); }
+  .chip .meta em { color: var(--ul-faint); font-style: normal; float: right; }
+  .marks { display: flex; flex-wrap: wrap; gap: var(--ul-space-4); align-items: center; }
+  .markbox { background: var(--ul-bg-raised); border: 1px solid var(--ul-line); border-radius: var(--ul-radius); padding: var(--ul-space-6); display: grid; place-items: center; min-width: 132px; }
+  .markbox.light { background: #fff; }
+  .markbox img { height: 44px; width: auto; }
+  .markbox .cap { font-family: var(--ul-font-mono); font-size: 10px; color: var(--ul-faint); margin-top: var(--ul-space-3); }
+  .sizes { display: flex; align-items: flex-end; gap: var(--ul-space-4); flex-wrap: wrap; }
+  .sizes figure { display: grid; justify-items: center; gap: var(--ul-space-2); margin: 0; }
+  .typerow { border-bottom: 1px solid var(--ul-line); padding: var(--ul-space-4) 0; }
+  .typerow:last-child { border-bottom: 0; }
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="https://unchained-labs.github.io/" aria-label="Unchained Labs">
+      <img src="assets/lockup-horizontal.svg" alt="Unchained Labs" style="height:22px">
+    </a>
+    <nav>
+      <a href="#palette">Palette</a>
+      <a href="#mark">Mark</a>
+      <a href="#type">Type</a>
+      <a href="#use">Use it</a>
+      <a href="https://github.com/Unchained-Labs/branding">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap">
+    <p class="label">Brand system</p>
+    <h1>Chain Teal on Midnight Navy.</h1>
+    <p class="lead">The single source of truth for colour, mark, type and voice across
+    every Unchained Labs project. Every ratio on this page is measured, and the
+    docs are tested against the measurement.</p>
+    <ul class="badges">
+      <li class="badge accent">v1.0</li>
+      <li class="badge up">43 contrast claims verified</li>
+      <li class="badge">MIT tokens</li>
+    </ul>
+    <div class="btn-row">
+      <a class="btn primary" href="https://github.com/Unchained-Labs/branding/blob/main/tokens/tokens.css">Get tokens.css</a>
+      <a class="btn" href="https://github.com/Unchained-Labs/branding">Read the repo</a>
+    </div>
+  </div>
+</section>
+
+<section id="palette">
+  <div class="wrap">
+    <p class="label">Palette</p>
+    <h2>Measured, not asserted</h2>
+    <p class="narrow">Neither colour is new — both were already the palette of
+    <code>unchainlabs.xyz</code> and the four Kymatics services. What this system
+    added is a measured ink ramp, a status axis that does not collide with the
+    brand, and tooling that fails CI when any of it drifts.</p>
+
+    <figure>
+      <img src="assets/tokens.png" alt="The Unchained Labs token ramp: surface, ink, accent and status swatches with measured contrast ratios">
+      <figcaption>Generated from <code>tokens.json</code> — the image cannot disagree with the tokens.</figcaption>
+    </figure>
+
+    <h3>Surface and ink</h3>
+    <div class="ramp">
+      <div class="chip"><span class="fill" style="background:#0F1419;border-bottom:1px solid var(--ul-line)"></span><span class="meta"><b>--ul-bg</b><span>#0F1419</span><em>ground</em></span></div>
+      <div class="chip"><span class="fill" style="background:#171D26"></span><span class="meta"><b>--ul-bg-raised</b><span>#171D26</span><em>1.09:1</em></span></div>
+      <div class="chip"><span class="fill" style="background:#232B35"></span><span class="meta"><b>--ul-line</b><span>#232B35</span><em>1.29:1</em></span></div>
+      <div class="chip"><span class="fill" style="background:#E8EDF2"></span><span class="meta"><b>--ul-heading</b><span>#E8EDF2</span><em>15.71:1</em></span></div>
+      <div class="chip"><span class="fill" style="background:#A8B3BF"></span><span class="meta"><b>--ul-body</b><span>#A8B3BF</span><em>8.70:1</em></span></div>
+      <div class="chip"><span class="fill" style="background:#7C8896"></span><span class="meta"><b>--ul-muted</b><span>#7C8896</span><em>5.13:1</em></span></div>
+      <div class="chip"><span class="fill" style="background:#5A6673"></span><span class="meta"><b>--ul-faint</b><span>#5A6673</span><em>3.16:1</em></span></div>
+      <div class="chip"><span class="fill" style="background:#00D4AA"></span><span class="meta"><b>--ul-accent</b><span>#00D4AA</span><em>9.69:1</em></span></div>
+    </div>
+
+    <div class="note" style="margin-top:var(--ul-space-6)">
+      <p><strong>Two tokens sit below the AA body floor on purpose.</strong>
+      <code>--ul-line</code> at 1.29:1 is a hairline — it separates regions and
+      never spells anything. <code>--ul-faint</code> at 3.16:1 clears AA for
+      large text and fails it for body; it is for 20px-and-up labels and
+      disabled controls. Find it on a sentence and that is a bug.</p>
+    </div>
+
+    <h3>Status is a separate axis</h3>
+    <p class="narrow">These products exist to answer <em>did it pass?</em> That
+    answer never shares a colour with the brand.</p>
+    <ul class="badges">
+      <li class="badge up">pass</li>
+      <li class="badge warn">warn</li>
+      <li class="badge down">fail</li>
+    </ul>
+
+    <div class="note warn">
+      <p><strong>The tension we did not design away.</strong> Chain Teal sits at
+      hue 168°, status-pass at 142° — only 26° apart. That is the direct cost of
+      inheriting a blue-green accent instead of picking a fresh one, and the
+      alternatives were worse: yellower collides with warn, blue breaks the
+      pass-is-green convention, and changing the accent orphans five shipped
+      products.</p>
+      <p>So the constraint is handled rather than hidden: <strong>status is never
+      encoded in colour alone.</strong> Every pass/warn/fail carries a glyph or a
+      word — required for red-green colour vision deficiency regardless of hue
+      spacing, so the 26° problem forced a practice we owed users anyway.</p>
+    </div>
+  </div>
+</section>
+
+<section id="mark">
+  <div class="wrap">
+    <p class="label">Mark</p>
+    <h2>A fan-out</h2>
+    <p class="narrow">One heavy node, three edges, three light nodes. The thesis
+    of every tool here is that linear execution is a chain and the real work is a
+    graph — so the mark is the shape that <em>replaces</em> the chain, not a
+    broken version of it. Read as a glyph it is a <code>&lt;</code>, where an
+    argument opens.</p>
+
+    <div class="marks">
+      <div class="markbox"><img src="assets/mark-accent.svg" alt="Mark in Chain Teal"><span class="cap">mark-accent</span></div>
+      <div class="markbox light"><img src="assets/mark-dark.svg" alt="Mark in ink on white"><span class="cap">mark-dark</span></div>
+      <div class="markbox"><img src="assets/lockup-horizontal.svg" alt="Horizontal lockup" style="height:26px"><span class="cap">lockup-horizontal</span></div>
+      <div class="markbox"><img src="assets/lockup-stacked.svg" alt="Stacked lockup" style="height:52px"><span class="cap">lockup-stacked</span></div>
+    </div>
+
+    <h3>It survives 16px</h3>
+    <p class="narrow">The binding constraint on all nine candidates. Four died on
+    this test and two of those four looked best at large sizes.</p>
+    <div class="sizes">
+      <figure><img src="assets/png/mark-accent-16.png" width="16" height="16" alt="Mark at 16px"><figcaption>16</figcaption></figure>
+      <figure><img src="assets/png/mark-accent-32.png" width="32" height="32" alt="Mark at 32px"><figcaption>32</figcaption></figure>
+      <figure><img src="assets/png/mark-accent-48.png" width="48" height="48" alt="Mark at 48px"><figcaption>48</figcaption></figure>
+      <figure><img src="assets/png/mark-accent-64.png" width="64" height="64" alt="Mark at 64px"><figcaption>64</figcaption></figure>
+      <figure><img src="assets/png/mark-accent-128.png" width="128" height="128" alt="Mark at 128px"><figcaption>128</figcaption></figure>
+    </div>
+
+    <p class="narrow" style="margin-top:var(--ul-space-6)">The geometry is
+    computed, not drawn: the generator solves each edge's endpoints onto the node
+    circumference so no stroke pokes through at any size. The lockups contain no
+    <code>&lt;text&gt;</code> elements and no font references — the wordmark is
+    real outline paths, so it renders identically on a machine that has never
+    heard of Space Grotesk.</p>
+  </div>
+</section>
+
+<section id="type">
+  <div class="wrap">
+    <p class="label">Type</p>
+    <h2>Three faces, three jobs</h2>
+    <p class="narrow">A reader should be able to tell what kind of information
+    they are looking at before they read a word of it.</p>
+
+    <div class="typerow">
+      <p class="label" style="margin-bottom:var(--ul-space-2)">Display · Space Grotesk 700</p>
+      <p style="font-family:var(--ul-font-display);font-size:var(--ul-text-3xl);font-weight:700;letter-spacing:-0.02em;color:var(--ul-heading);margin:0">Linear is a chain</p>
+    </div>
+    <div class="typerow">
+      <p class="label" style="margin-bottom:var(--ul-space-2)">Body · Inter 400</p>
+      <p style="margin:0;max-width:68ch">The docs in this org are written, not generated, and they make claims that need to be read at length. A reader working through 400 words of reasoning should be doing it in a face designed for exactly that.</p>
+    </div>
+    <div class="typerow">
+      <p class="label" style="margin-bottom:var(--ul-space-2)">Data · JetBrains Mono 400</p>
+      <pre class="term" style="margin:0"><code><span class="p">$</span> <span class="c">decorrelate report runs.jsonl</span>
+<span class="dim">verifiers</span>  3     <span class="dim">N_eff</span>  <span class="ac">1.2</span>
+<span class="dim">fleiss κ</span>   0.81  <span class="wa">high agreement, low independence</span></code></pre>
+    </div>
+
+    <div class="note" style="margin-top:var(--ul-space-6)">
+      <p><strong>Data gets its own face, and that is load-bearing.</strong> These
+      products report measurements. A cost estimate in Inter reads as a claim;
+      the same estimate in JetBrains Mono reads as output. Mixing them up
+      undermines the one thing these tools sell.</p>
+    </div>
+  </div>
+</section>
+
+<section id="use">
+  <div class="wrap">
+    <p class="label">Use it</p>
+    <h2>Style through the properties</h2>
+    <pre><code>&lt;link rel="stylesheet" href="tokens.css"&gt;
+&lt;link rel="stylesheet" href="brand.css"&gt;</code></pre>
+    <p class="narrow"><strong>Never hard-code a hex in an app repo.</strong> The
+    accent legitimately changes value between modes — <code>#00D4AA</code> is
+    1.91:1 on white and unreadable as text, so light mode uses
+    <code>#007D66</code>. A hard-coded teal is a light-mode bug waiting to ship.</p>
+
+    <div class="grid three" style="margin-top:var(--ul-space-6)">
+      <a class="card" href="https://github.com/Unchained-Labs/branding/blob/main/brand/palette.md">
+        <h3>palette.md</h3><p>The ramp, the accent budget, the status collision, every measured ratio.</p></a>
+      <a class="card" href="https://github.com/Unchained-Labs/branding/blob/main/brand/logo.md">
+        <h3>logo.md</h3><p>Construction, sizing, clear space, misuse.</p></a>
+      <a class="card" href="https://github.com/Unchained-Labs/branding/blob/main/brand/typography.md">
+        <h3>typography.md</h3><p>Four roles, the scale, why data gets its own face.</p></a>
+      <a class="card" href="https://github.com/Unchained-Labs/branding/blob/main/brand/voice.md">
+        <h3>voice.md</h3><p>Numbers over adjectives. Name the cost. No marketing register.</p></a>
+      <a class="card" href="https://github.com/Unchained-Labs/branding/blob/main/research/palette-study.md">
+        <h3>palette-study.md</h3><p>Five directions considered, and why four lost.</p></a>
+      <a class="card" href="https://github.com/Unchained-Labs/branding/blob/main/research/mark-options.md">
+        <h3>mark-options.md</h3><p>Nine candidates, the shortlist, the rejects.</p></a>
+    </div>
+
+    <h3>Everything here is checked</h3>
+    <pre class="term"><code><span class="p">$</span> <span class="c">make check</span>
+<span class="ok">ok</span>  19 dark + 16 light colour tokens, all clear their contrast tier
+<span class="ok">ok</span>  43 contrast claims in tokens.css + brand/*.md all match measurement</code></pre>
+    <p class="narrow"><code>verify-docs</code> exists because the ratios in
+    <code>palette.md</code> were wrong twice while this repo was being written —
+    estimated by eye, then stated in a table as if measured. A brand doc that
+    asserts a wrong ratio is worse than one that asserts none, because the wrong
+    one gets trusted. So the docs are tested now.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <span>Unchained Labs · brand system</span>
+    <nav>
+      <a href="https://unchained-labs.github.io/">Org</a>
+      <a href="https://github.com/Unchained-Labs/branding">Source</a>
+      <a href="https://github.com/Unchained-Labs/branding/blob/main/TRADEMARK.md">Trademark</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
