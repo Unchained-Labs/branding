@@ -8,7 +8,7 @@
       "type": "out",
       "speed": 0.09,
       "lines": [
-        "  {ac}unchained labs{/ac}  {dim}\u2014 an agentic lab{/dim}",
+        "  {ac}unchained labs{/ac}  {dim}— an agentic lab{/dim}",
         "",
         "  {mut}Two halves of one bet: the useful unit of agent work is a graph, not a chat.{/mut}",
         "  {mut}A product that runs those graphs, and the tooling we built after running enough{/mut}",
@@ -23,11 +23,11 @@
       "type": "out",
       "speed": 0.1,
       "lines": [
-        "  {hi}the product{/hi}   {dim}\u00b7{/dim}  {ac}Kymatics{/ac}  {dim}speak an intent, get a built thing{/dim}",
+        "  {hi}the product{/hi}   {dim}·{/dim}  {ac}Kymatics{/ac}  {dim}speak an intent, get a built thing{/dim}",
         "",
-        "     {ac}Lavoix{/ac}   {dim}speech \u2194 text{/dim}                    {dim}Python \u00b7 FastAPI{/dim}",
-        "     {ac}Seal{/ac}     {dim}intent \u2192 a card on a board{/dim}       {dim}React \u00b7 TypeScript{/dim}",
-        "     {ac}Otter{/ac}    {dim}card \u2192 a queued agent job{/dim}        {dim}Rust \u00b7 axum \u00b7 Postgres \u00b7 Redis{/dim}",
+        "     {ac}Lavoix{/ac}   {dim}speech ↔ text{/dim}                    {dim}Python · FastAPI{/dim}",
+        "     {ac}Seal{/ac}     {dim}intent → a card on a board{/dim}       {dim}React · TypeScript{/dim}",
+        "     {ac}Otter{/ac}    {dim}card → a queued agent job{/dim}        {dim}Rust · axum · Postgres · Redis{/dim}",
         "",
         "  {mut}Each job runs in an isolated workspace. Events stream back live. Every run keeps{/mut}",
         "  {mut}its full history, its token usage, and its cost.{/mut}"
@@ -53,7 +53,7 @@
       "type": "out",
       "speed": 0.08,
       "lines": [
-        "  {hi}the tooling{/hi}   {dim}\u00b7{/dim}  {dim}five tools. deterministic. zero tokens.{/dim}",
+        "  {hi}the tooling{/hi}   {dim}·{/dim}  {dim}five tools. deterministic. zero tokens.{/dim}",
         "  {dim}every one of them pointed back at our own stack.{/dim}"
       ],
       "pause": 1.0
@@ -73,9 +73,9 @@
       "type": "out",
       "speed": 0.05,
       "lines": [
-        "  {er}\u2717{/er} This agent's job is \"combine\" \u2014 that is plumbing, not judgment.  {dim}agent-as-reduce{/dim}",
-        "   {dim}22 \u2502{/dim} const merged = await {er}agent(`Combine the results and dedupe them`){/er}",
-        "     {ok}fix{/ok} {mut}Delete the agent, do it in plain code. flatMap and a Set \u2014 zero tokens.{/mut}"
+        "  {er}✗{/er} This agent's job is \"combine\" — that is plumbing, not judgment.  {dim}agent-as-reduce{/dim}",
+        "   {dim}22 │{/dim} const merged = await {er}agent(`Combine the results and dedupe them`){/er}",
+        "     {ok}fix{/ok} {mut}Delete the agent, do it in plain code. flatMap and a Set — zero tokens.{/mut}"
       ],
       "pause": 1.3
     },
@@ -86,8 +86,8 @@
       "type": "out",
       "speed": 0.05,
       "lines": [
-        "  {er}\u2717{/er} 3 verifiers spawned from one factory with no varying lens or model.  {dim}correlated-verifiers{/dim}",
-        "   {dim}27 \u2502{/dim}     {er}agent(`Verify this finding is real. Answer yes or no.`){/er}",
+        "  {er}✗{/er} 3 verifiers spawned from one factory with no varying lens or model.  {dim}correlated-verifiers{/dim}",
+        "   {dim}27 │{/dim}     {er}agent(`Verify this finding is real. Answer yes or no.`){/er}",
         "     {ok}fix{/ok} {mut}Three different questions beat three identical ones. Free.{/mut}"
       ],
       "pause": 1.3
@@ -99,8 +99,8 @@
       "type": "out",
       "speed": 0.05,
       "lines": [
-        "  {er}\u2717{/er} This cycle spawns agents with no dry-round counter and no round cap.  {dim}unbounded-cycle{/dim}",
-        "   {dim}42 \u2502{/dim} {er}while (true) {{/er}",
+        "  {er}✗{/er} This cycle spawns agents with no dry-round counter and no round cap.  {dim}unbounded-cycle{/dim}",
+        "   {dim}42 │{/dim} {er}while (true) {{/er}",
         "     {ok}fix{/ok} {mut}Stop after K rounds that surface nothing new. Keep maxRounds as the backstop.{/mut}"
       ],
       "pause": 1.4
@@ -133,10 +133,10 @@
       "lines": [
         "  {hi}route-auth-audit{/hi}  {dim}estimated before running{/dim}",
         "",
-        "  agents       {hi}114{/hi}  {dim}(66\u2013222){/dim}",
-        "  cost       {hi}$0.974{/hi}  {dim}($0.687\u2013$1.62){/dim}",
+        "  agents       {hi}114{/hi}  {dim}(66–222){/dim}",
+        "  cost       {hi}$0.974{/hi}  {dim}($0.687–$1.62){/dim}",
         "  tokens      {dim}588k in  70k out{/dim}",
-        "  budget     $12.00  {ok}\u2713 under{/ok}"
+        "  budget     $12.00  {ok}✓ under{/ok}"
       ],
       "pause": 1.3
     },
@@ -149,10 +149,10 @@
       "lines": [
         "  {dim}where it goes{/dim}",
         "",
-        "  verify     {wa}\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588{/wa}{dim}\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591{/dim}   $0.435  {wa}45%{/wa}",
-        "  fan-out    {ac}\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588{/ac}{dim}\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591{/dim}   $0.299  31%",
-        "  synthesis  {ac}\u2588\u2588\u2588\u2588\u2588\u2588{/ac}{dim}\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591{/dim}   $0.210  22%",
-        "  scope      {ac}\u2588{/ac}{dim}\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591{/dim}   $0.029  3%"
+        "  verify     {wa}█████████████{/wa}{dim}░░░░░░░░░░░░░░░░{/dim}   $0.435  {wa}45%{/wa}",
+        "  fan-out    {ac}█████████{/ac}{dim}░░░░░░░░░░░░░░░░░░░░{/dim}   $0.299  31%",
+        "  synthesis  {ac}██████{/ac}{dim}░░░░░░░░░░░░░░░░░░░░░░░{/dim}   $0.210  22%",
+        "  scope      {ac}█{/ac}{dim}░░░░░░░░░░░░░░░░░░░░░░░░░░░░{/dim}   $0.029  3%"
       ],
       "pause": 1.3
     },
@@ -163,7 +163,7 @@
       "type": "out",
       "speed": 0.06,
       "lines": [
-        "  {wa}!{/wa} verification is 45% of this run. {mut}findings \u00d7 lenses, not fan-out width, is the growth term.{/mut}"
+        "  {wa}!{/wa} verification is 45% of this run. {mut}findings × lenses, not fan-out width, is the growth term.{/mut}"
       ],
       "pause": 1.7
     },
@@ -185,11 +185,11 @@
         "  {hi}verifier independence{/hi}",
         "",
         "  verifiers          3  {dim}skeptic-1, skeptic-2, skeptic-3{/dim}",
-        "  mean pairwise \u03c6  {er}0.803{/er}  {er}redundant{/er}",
-        "  Fleiss \u03ba          0.800  {dim}observed 0.900 \u00b7 chance 0.501{/dim}",
+        "  mean pairwise φ  {er}0.803{/er}  {er}redundant{/er}",
+        "  Fleiss κ          0.800  {dim}observed 0.900 · chance 0.501{/dim}",
         "",
         "  N_eff            {er}1.15{/er} of 3",
-        "                   {er}\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588{/er}{dim}\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591\u2591{/dim}"
+        "                   {er}█████████{/er}{dim}░░░░░░░░░░░░░░░░{/dim}"
       ],
       "pause": 1.4
     },
@@ -200,8 +200,8 @@
       "type": "out",
       "speed": 0.06,
       "lines": [
-        "  {ac}\u2192{/ac} {mut}You are paying for 3 checks and getting 1.15. That is 2.6\u00d7 the cost of the{/mut}",
-        "    {mut}confidence you have.{/mut} {dim}spent $0.48 \u00b7 roughly $0.30 bought no independence{/dim}"
+        "  {ac}→{/ac} {mut}You are paying for 3 checks and getting 1.15. That is 2.6× the cost of the{/mut}",
+        "    {mut}confidence you have.{/mut} {dim}spent $0.48 · roughly $0.30 bought no independence{/dim}"
       ],
       "pause": 1.8
     },
@@ -231,7 +231,7 @@
       "type": "out",
       "speed": 0.06,
       "lines": [
-        "  {ac}authsweep{/ac}  {dim}12 files \u00b7 3 routes \u00b7 fastapi{/dim}",
+        "  {ac}authsweep{/ac}  {dim}12 files · 3 routes · fastapi{/dim}",
         "",
         "  {dim}prefilter{/dim}  1 of 3 routes dropped before any agent ran",
         "             {dim}33% of the fan-out, for zero tokens{/dim}"
@@ -247,7 +247,7 @@
       "lines": [
         "  {wa}!{/wa} POST {hi}/v1/stt/transcribe{/hi}  {dim}src/lavoix/api.py:29{/dim}",
         "     {dim}@app.post(\"/v1/stt/transcribe\"){/dim}",
-        "     {mut}no authorization check found on or above this handler \u00b7 POST changes state{/mut}"
+        "     {mut}no authorization check found on or above this handler · POST changes state{/mut}"
       ],
       "pause": 1.1
     },
@@ -260,7 +260,7 @@
       "lines": [
         "  {wa}!{/wa} POST {hi}/v1/tts/synthesize{/hi}  {dim}src/lavoix/api.py:54{/dim}",
         "     {dim}@app.post(\"/v1/tts/synthesize\"){/dim}",
-        "     {mut}no authorization check found on or above this handler \u00b7 POST changes state{/mut}"
+        "     {mut}no authorization check found on or above this handler · POST changes state{/mut}"
       ],
       "pause": 1.1
     },
@@ -282,7 +282,7 @@
       "speed": 0.07,
       "lines": [
         "  {mut}Both endpoints do paid provider work. Both were open.{/mut}",
-        "  {mut}And the first run said {/mut}{er}\"every route has an authorization check\"{/er}{mut} \u2014 the scanner{/mut}",
+        "  {mut}And the first run said {/mut}{er}\"every route has an authorization check\"{/er}{mut} — the scanner{/mut}",
         "  {mut}read {/mut}{hi}Depends(get_service){/hi}{mut} as a guard. Fixed in the scanner, with a fixture{/mut}",
         "  {mut}taken from this exact shape.{/mut}"
       ],
@@ -303,17 +303,47 @@
       "type": "out",
       "speed": 0.06,
       "lines": [
-        "  {ac}authsweep{/ac}  {dim}1 files \u00b7 0 routes \u00b7 no framework detected{/dim}",
+        "  {ac}authsweep{/ac}  {dim}17 files · 38 routes · axum{/dim}",
         "",
-        "  {wa}!{/wa} {hi}no routes found \u2014 nothing was examined{/hi}",
-        "",
-        "     {mut}This is not a pass. authsweep reads Express, Fastify and Koa (JS/TS){/mut}",
-        "     {mut}and FastAPI and Flask (Python). A Rust, Go, Ruby or Java service is{/mut}",
-        "     {mut}invisible to it, and so is a router it cannot recognise.{/mut}",
-        "",
-        "     {mut}Check the path, or treat this stack as {/mut}{wa}unscanned{/wa}{mut}.{/mut}"
+        "  {dim}prefilter{/dim}  2 of 38 routes dropped before any agent ran"
       ],
-      "pause": 1.6
+      "pause": 1.0
+    },
+    {
+      "type": "blank"
+    },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "  {er}✗{/er} POST {hi}/v1/workspaces/{id}/command{/hi}  {dim}otter-server/src/main.rs:244{/dim}",
+        "     {dim}.route(\"/v1/workspaces/{id}/command\", post(run_workspace_command)){/dim}",
+        "     {mut}no authorization check · POST changes state · {/mut}{er}executes code or shell{/er}",
+        "     {er}commands{/er}{mut} · takes an id or wildcard, so it can address another tenant's row{/mut}"
+      ],
+      "pause": 1.4
+    },
+    {
+      "type": "blank"
+    },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "  {er}✗{/er} GET {hi}/v1/runtime/workspaces/{id}/shell/ws{/hi}  {dim}otter-server/src/main.rs:271{/dim}",
+        "     {mut}no authorization check · {/mut}{er}executes code or shell commands{/er}{mut} · takes an id{/mut}"
+      ],
+      "pause": 1.3
+    },
+    {
+      "type": "blank"
+    },
+    {
+      "type": "out",
+      "lines": [
+        "  {er}3 high{/er} {dim}·{/dim} {wa}21 medium{/wa} {dim}·{/dim} {ac}12 low{/ac}"
+      ],
+      "pause": 1.4
     },
     {
       "type": "blank"
@@ -322,9 +352,22 @@
       "type": "out",
       "speed": 0.07,
       "lines": [
-        "  {mut}Otter is Rust. The second bug: a green tick over a control plane it never read.{/mut}",
-        "  {mut}Two false cleans, both found by running the tool against real code \u2014 neither{/mut}",
-        "  {mut}reachable from fixtures written by the same person as the rules.{/mut}"
+        "  {mut}Otter is Rust, and the first time we ran this it found {/mut}{er}zero routes{/er}{mut} and called{/mut}",
+        "  {mut}that a pass — a green tick over a control plane it never read. Second false{/mut}",
+        "  {mut}clean, opposite direction to the first.{/mut}"
+      ],
+      "pause": 2.0
+    },
+    {
+      "type": "blank"
+    },
+    {
+      "type": "out",
+      "speed": 0.07,
+      "lines": [
+        "  {mut}So it reads Rust now. axum, actix-web and rocket — chained method routers,{/mut}",
+        "  {mut}nest and mount prefixes, extractor guards. Neither bug was reachable from{/mut}",
+        "  {mut}fixtures written by the same person as the rules.{/mut}"
       ],
       "pause": 2.2
     },
@@ -377,7 +420,7 @@
       "speed": 0.07,
       "lines": [
         "  {mut}preflight predicts cost before a run; Otter measures it after. Same numbers,{/mut}",
-        "  {mut}two tables \u2014 now one. And it is the {/mut}{ok}CI-checked{/ok}{mut} one: preflight's build fails when{/mut}",
+        "  {mut}two tables — now one. And it is the {/mut}{ok}CI-checked{/ok}{mut} one: preflight's build fails when{/mut}",
         "  {mut}its price list goes stale, and it refuses to export an expired intro rate.{/mut}"
       ],
       "pause": 2.2
@@ -391,7 +434,7 @@
       "lines": [
         "  {ac}unchained labs{/ac}",
         "",
-        "  {hi}Kymatics{/hi}     {dim}voice \u2192 agent jobs \u2192 a built thing{/dim}      {dim}kymatics.vercel.app{/dim}",
+        "  {hi}Kymatics{/hi}     {dim}voice → agent jobs → a built thing{/dim}      {dim}kymatics.vercel.app{/dim}",
         "  {hi}graphlint{/hi}    {dim}is the graph correct?{/dim}",
         "  {hi}preflight{/hi}    {dim}what will it cost?{/dim}",
         "  {hi}decorrelate{/hi}  {dim}did the verification buy anything?{/dim}",
