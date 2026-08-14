@@ -1,0 +1,50 @@
+{
+  "name": "decorrelate", "title": "decorrelate", "cols": 94, "rows": 24,
+  "steps": [
+    { "type": "cmd", "text": "decorrelate report runs.jsonl", "pause": 0.9 },
+    { "type": "blank" },
+    { "type": "out", "cls": "hi", "lines": ["  verifier independence"], "pause": 0.3 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.07, "lines": [
+      "  {dim}verifiers{/dim}          3  {dim}skeptic-1, skeptic-2, skeptic-3{/dim}",
+      "  {dim}findings{/dim}           40",
+      "  {dim}contested{/dim}          6  {dim}findings where the panel split{/dim}"
+    ], "pause": 0.7 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.09, "lines": [
+      "  {dim}mean pairwise φ{/dim}     0.803  {er}redundant{/er}",
+      "  {dim}Fleiss κ{/dim}           0.800  {dim}observed 0.900 · chance 0.501{/dim}"
+    ], "pause": 1.0 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.12, "lines": [
+      "  {hi}N_eff{/hi}              {er}1.15{/er} {dim}of 3{/dim}",
+      "                     {er}█████████{/er}{dim}░░░░░░░░░░░░░░░{/dim}"
+    ], "pause": 1.5 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.06, "lines": [
+      "  {er}→{/er} You are paying for 3 checks and getting 1.15.",
+      "    That is {hi}2.6×{/hi} the cost of the confidence you have.",
+      "    {dim}spent $0.48 · roughly $0.30 of it bought no independence{/dim}"
+    ], "pause": 1.6 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.07, "lines": [
+      "  {dim}pair                    φ      κ      agree  shared{/dim}",
+      "  skeptic-1 ↔ skeptic-2    {er}0.80{/er}   0.80    90%      40  {wa}← same model, same lens{/wa}",
+      "  skeptic-2 ↔ skeptic-3    {er}0.80{/er}   0.80    90%      40  {wa}← same model, same lens{/wa}"
+    ], "pause": 1.5 },
+    { "type": "blank" },
+    { "type": "cmd", "text": "decorrelate lenses security", "pause": 0.7 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.08, "lines": [
+      "  1. {ac}authz{/ac}    {dim}claude-opus-5{/dim}     Can a caller who should not reach this reach it?",
+      "  2. {ac}input{/ac}    {dim}claude-sonnet-5{/dim}   Is any attacker-controlled value unvalidated?",
+      "  3. {ac}session{/ac}  {dim}claude-haiku-4-5{/dim}  Is session state trusted without a freshness check?"
+    ], "pause": 1.3 },
+    { "type": "blank" },
+    { "type": "out", "cls": "dim", "lines": [
+      "  Three different questions, three model families.",
+      "  Statistics verified against the published Fleiss example: κ = 0.210."
+    ], "pause": 0.5 },
+    { "type": "hold", "seconds": 2.0 }
+  ]
+}

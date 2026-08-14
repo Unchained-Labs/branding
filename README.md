@@ -5,6 +5,11 @@
   <p><a href="https://unchained-labs.github.io/branding/">unchained-labs.github.io/branding</a></p>
 </div>
 
+<div align="center">
+  <img src="docs/assets/demo.gif" width="760" alt="branding terminal demo">
+  <br><sub>The docs are tested against measurement. <a href="https://unchained-labs.github.io/branding/">Full docs →</a></sub>
+</div>
+
 ---
 
 The palette, mark and type used across

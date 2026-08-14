@@ -1,0 +1,44 @@
+{
+  "name": "preflight", "title": "preflight", "cols": 94, "rows": 24,
+  "steps": [
+    { "type": "cmd", "text": "preflight estimate audit.graph.json", "pause": 0.9 },
+    { "type": "blank" },
+    { "type": "out", "cls": "hi", "lines": ["  route-auth-audit  {dim}estimated before running{/dim}"], "pause": 0.5 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.09, "lines": [
+      "  {dim}agents{/dim}       114  {dim}(66–222){/dim}",
+      "  {dim}cost{/dim}       {hi}$0.974{/hi}  {dim}($0.687–$1.62){/dim}",
+      "  {dim}tokens{/dim}      588k in  70k out",
+      "  {dim}budget{/dim}     $12.00  {ok}✓ under{/ok}"
+    ], "pause": 1.2 },
+    { "type": "blank" },
+    { "type": "out", "cls": "hi", "lines": ["  where it goes"], "pause": 0.3 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.12, "lines": [
+      "  verify     {wa}█████████████{/wa}{dim}░░░░░░░░░░░░░░░{/dim}   $0.435  {dim}45%{/dim}",
+      "  fan-out    {ac}█████████{/ac}{dim}░░░░░░░░░░░░░░░░░░░{/dim}   $0.299  {dim}31%{/dim}",
+      "  synthesis  {ac}██████{/ac}{dim}░░░░░░░░░░░░░░░░░░░░░░{/dim}   $0.210  {dim}22%{/dim}",
+      "  scope      {ac}█{/ac}{dim}░░░░░░░░░░░░░░░░░░░░░░░░░░░{/dim}   $0.029  {dim}3%{/dim}"
+    ], "pause": 1.4 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.06, "lines": [
+      "  {wa}!{/wa} verification is 45% of this run.",
+      "    {dim}findings × lenses, not fan-out width, is the growth term.{/dim}"
+    ], "pause": 1.6 },
+    { "type": "blank" },
+    { "type": "out", "cls": "hi", "lines": ["  biggest levers"], "pause": 0.3 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.08, "lines": [
+      "     $0.435  verify {dim}(verifier){/dim}",
+      "             {dim}drop a lens, or replace one with an executable oracle{/dim}",
+      "     $0.299  inspect {dim}(worker){/dim}",
+      "             {dim}narrow the fan-out, or add a zero-token prefilter{/dim}"
+    ], "pause": 1.5 },
+    { "type": "blank" },
+    { "type": "out", "cls": "dim", "lines": [
+      "  Every assumption printed. Prices verified 2026-06-24.",
+      "  Comments this on the PR that changed the spec."
+    ], "pause": 0.5 },
+    { "type": "hold", "seconds": 2.0 }
+  ]
+}

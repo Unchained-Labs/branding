@@ -1,0 +1,44 @@
+{
+  "name": "branding", "title": "branding", "cols": 94, "rows": 23,
+  "steps": [
+    { "type": "cmd", "text": "make check", "pause": 0.9 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.1, "lines": [
+      "{ok}ok{/ok}  19 dark + 16 light colour tokens, all clear their contrast tier",
+      "{ok}ok{/ok}  43 contrast claims in tokens.css + brand/*.md all match measurement",
+      "{ok}ok{/ok}  brand system consistent"
+    ], "pause": 1.6 },
+    { "type": "blank" },
+    { "type": "out", "cls": "dim", "lines": [
+      "  The docs are tested. The ratios in palette.md were wrong twice while",
+      "  this repo was being written — estimated, then stated as if measured."
+    ], "pause": 1.7 },
+    { "type": "blank" },
+    { "type": "cmd", "text": "make contrast | head -8", "pause": 0.7 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.08, "lines": [
+      "{dim}pair                          ratio  AA-body AA-large{/dim}",
+      "heading {hi}#E8EDF2{/hi}               15.71  {ok}PASS{/ok}    {ok}PASS{/ok}",
+      "body {mut}#A8B3BF{/mut}                   8.70  {ok}PASS{/ok}    {ok}PASS{/ok}",
+      "muted {mut}#7C8896{/mut}                  5.13  {ok}PASS{/ok}    {ok}PASS{/ok}",
+      "faint {dim}#5A6673{/dim}                  3.16  {er}fail{/er}    {ok}PASS{/ok}",
+      "accent {ac}#00D4AA{/ac}                  9.69  {ok}PASS{/ok}    {ok}PASS{/ok}"
+    ], "pause": 1.5 },
+    { "type": "blank" },
+    { "type": "out", "cls": "dim", "lines": [
+      "  faint fails AA body on purpose — large text and UI only.",
+      "  Documented rather than quietly shipped."
+    ], "pause": 1.4 },
+    { "type": "blank" },
+    { "type": "cmd", "text": "make logo && make verify", "pause": 0.7 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.06, "lines": [
+      "   {ac}mark-accent.svg{/ac}      {dim}geometry computed, not drawn{/dim}",
+      "   {ac}lockup-horizontal.svg{/ac} {dim}real outline paths — no font dependency{/dim}",
+      "{ok}ok{/ok}  68 PNGs are the sizes and inks they claim"
+    ], "pause": 1.6 },
+    { "type": "blank" },
+    { "type": "out", "cls": "dim", "lines": ["  Chain Teal on Midnight Navy. Measured, not asserted."], "pause": 0.5 },
+    { "type": "hold", "seconds": 2.0 }
+  ]
+}

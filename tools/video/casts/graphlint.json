@@ -1,0 +1,79 @@
+{
+  "name": "graphlint",
+  "title": "graphlint",
+  "cols": 94,
+  "rows": 25,
+  "steps": [
+    { "type": "cmd", "text": "npx graphlint check .claude/workflows/", "pause": 0.9 },
+    { "type": "blank" },
+    { "type": "out", "cls": "dim", "lines": [".claude/workflows/review.js (script)"], "pause": 0.4 },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "  {er}✗{/er} Date.now() inside a journaled run.  {dim}nondeterminism{/dim}",
+        "   {dim}11 │{/dim} const runId = {er}Date.now(){/er}",
+        "     {ok}fix{/ok} {mut}Pass timestamps in as arguments from outside the graph.{/mut}"
+      ],
+      "pause": 1.1
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "  {er}✗{/er} This agent's job is \"combine\" — that is plumbing, not judgment.  {dim}agent-as-reduce{/dim}",
+        "   {dim}22 │{/dim} const merged = await {er}agent(`Combine the results and dedupe them`){/er}",
+        "     {ok}fix{/ok} {mut}Reduce steps are free. flatMap and a Set — zero tokens.{/mut}"
+      ],
+      "pause": 1.2
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "  {er}✗{/er} 3 verifiers spawned from one factory with no varying lens or model.  {dim}correlated-verifiers{/dim}",
+        "   {dim}27 │{/dim}     {er}agent(`Verify this finding is real. Answer yes or no.`){/er}",
+        "     {ok}fix{/ok} {mut}Three different questions beat three identical ones. Free.{/mut}"
+      ],
+      "pause": 1.2
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "  {wa}!{/wa} This `parallel()` barrier's result is only reshaped, never compared.  {dim}unjustified-barrier{/dim}",
+        "   {dim}24 │{/dim} const found = await {wa}parallel{/wa}(DIMENSIONS.map(...))",
+        "     {ok}fix{/ok} {mut}Use pipeline() — a barrier waits for the slowest item for nothing.{/mut}"
+      ],
+      "pause": 1.2
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "lines": ["{er}3 errors{/er} {dim}·{/dim} {wa}2 warnings{/wa} {dim}in 1 file{/dim}"],
+      "pause": 1.6
+    },
+    { "type": "blank" },
+    { "type": "cmd", "text": "graphlint rules | head -4", "pause": 0.6 },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.09,
+      "lines": [
+        "{dim}ERROR{/dim}",
+        "  {ac}agent-as-reduce{/ac}       An agent spawned to combine results — that is an edge.",
+        "  {ac}correlated-verifiers{/ac}  N identical verifiers are one verifier at N× the price.",
+        "  {ac}unbounded-cycle{/ac}       A cycle with no dry-round counter is a budget incinerator.",
+        "  {ac}resurfacing-cycle{/ac}     Deduping against confirmed instead of seen never converges."
+      ],
+      "pause": 1.4
+    },
+    { "type": "blank" },
+    { "type": "out", "cls": "dim", "lines": ["16 rules. Zero tokens. Runs before a single agent does."], "pause": 0.4 },
+    { "type": "hold", "seconds": 2.0, "cursor": true }
+  ]
+}

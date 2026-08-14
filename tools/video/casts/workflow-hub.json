@@ -1,0 +1,45 @@
+{
+  "name": "workflow-hub", "title": "workflow-hub", "cols": 94, "rows": 24,
+  "steps": [
+    { "type": "cmd", "text": "npx workflow-hub list", "pause": 0.9 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.09, "lines": [
+      "  {ac}auth-audit{/ac}        One agent per route handler, hunting missing auth checks",
+      "                    {dim}diamond + verify · card 1 · ~$1 for 40 routes{/dim}",
+      "  {ac}cited-report{/ac}      Decomposed research with adversarial verification",
+      "                    {dim}diamond + adversarial · card 5 · ~$6 for 5 angles{/dim}",
+      "  {ac}cve-sweep{/ac}         Per-repo dependency audit, triaged into an upgrade order",
+      "                    {dim}nested fan-out · card 9 · ~$4 for 12 repos{/dim}",
+      "  {ac}ecosystem-digest{/ac}  Reads N sources in parallel, ranks by impact, writes one digest",
+      "                    {dim}diamond, barrier · card 6 · ~$0.30 for 8 sources{/dim}",
+      "  {ac}screening-funnel{/ac}  Cheap rubric pass over a backlog, deep dive on the shortlist",
+      "                    {dim}funnel · card 7 · ~$2 for 60 items{/dim}",
+      "  {ac}test-gen{/ac}          One agent per module writes tests; the runner verifies",
+      "                    {dim}pipeline + oracle gate · card 2 · ~$3 for 10 modules{/dim}"
+    ], "pause": 1.6 },
+    { "type": "blank" },
+    { "type": "cmd", "text": "npx workflow-hub add auth-audit", "pause": 0.9 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.08, "lines": [
+      "  {ok}✓{/ok} .claude/workflows/auth-audit.js",
+      "",
+      "  {dim}phases{/dim}    Scope → Scan → Verify → Report",
+      "  {dim}cost{/dim}      ~$1 for 40 routes with 3 lenses"
+    ], "pause": 1.3 },
+    { "type": "blank" },
+    { "type": "out", "speed": 0.07, "lines": [
+      "  {dim}next:{/dim}",
+      "    {mut}npx graphlint check .claude/workflows/auth-audit.js{/mut}",
+      "    {mut}read it before you run it — you own it now{/mut}"
+    ], "pause": 1.3 },
+    { "type": "blank" },
+    { "type": "cmd", "text": "npx graphlint check .claude/workflows/", "pause": 0.6 },
+    { "type": "out", "lines": ["{ok}✓{/ok} 1 file clean"], "pause": 1.2 },
+    { "type": "blank" },
+    { "type": "out", "cls": "dim", "lines": [
+      "  No runtime dependency. No version to keep in sync. No update command —",
+      "  editing the file is the point. All six lint clean, asserted in CI."
+    ], "pause": 0.5 },
+    { "type": "hold", "seconds": 2.0 }
+  ]
+}
