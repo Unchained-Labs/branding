@@ -1,0 +1,224 @@
+{
+  "name": "localflow",
+  "title": "localflow",
+  "cols": 94,
+  "rows": 24,
+  "steps": [
+    { "type": "cmd", "text": "localflow board", "pause": 0.9 },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.06,
+      "lines": [
+        "  {hi}localflow{/hi}  {dim}7 session(s) · 1.9M out · 738.9M cached in · {/dim}{hi}$593{/hi}",
+        "             {dim}98% of input tokens came from cache{/dim}"
+      ],
+      "pause": 1.3
+    },
+    { "type": "blank" },
+    { "type": "out", "lines": ["  {ok}running{/ok} {dim}(2){/dim}"], "pause": 0.4 },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "    {hi}Build whitespace agent workflow tooling in unchained-labs{/hi}",
+        "      {dim}graph-claude-46 · opus-5 · 660k out · {/dim}{hi}$184{/hi}{dim} · 99% cached · 38s{/dim}",
+        "      {dim}~/dev/graph-claude · last: Bash · {/dim}{wa}23 tool errors{/wa}"
+      ],
+      "pause": 1.1
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "    {hi}Design Hiko Company ROS2 robotics stack architecture{/hi}",
+        "      {dim}the-hiko-company-cd · fable-5 · 75k out · {/dim}{hi}$20.98{/hi}{dim} · 94% cached · 10m{/dim}",
+        "      {dim}~/dev/the-hiko-company · last: Bash · 3 agent calls{/dim}"
+      ],
+      "pause": 1.2
+    },
+    { "type": "blank" },
+    { "type": "out", "lines": ["  {wa}waiting on you{/wa} {dim}(3){/dim}"], "pause": 0.5 },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "    {hi}create a new repo for socials wherewe will have private docs …{/hi}",
+        "      {dim}wardn-22 · opus-5 · 839k out · {/dim}{er}$328{/er}{dim} · 97% cached · 2d{/dim}",
+        "      {dim}~/dev/bench2clanker · claude/bench2baller-mt167r · last: Bash{/dim}"
+      ],
+      "pause": 1.4
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.07,
+      "lines": [
+        "  {mut}That one has been idle for two days waiting for an answer, and it has{/mut}",
+        "  {mut}spent more than everything else on this board put together.{/mut}"
+      ],
+      "pause": 2.0
+    },
+    { "type": "clear" },
+    {
+      "type": "out",
+      "speed": 0.08,
+      "lines": ["  {hi}the cost is measured, and it took two corrections to get right{/hi}"],
+      "pause": 1.1
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.06,
+      "lines": [
+        "  {mut}1. Usage is re-emitted as a message streams — up to ten byte-identical{/mut}",
+        "     {mut}copies. Summing every line inflated output tokens {/mut}{er}2.25×{/er}{mut} on a real{/mut}",
+        "     {mut}17MB transcript. Every figure on the board would have been wrong.{/mut}"
+      ],
+      "pause": 1.8
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.06,
+      "lines": [
+        "  {mut}2. Cache writes bill by TTL. Claude Code writes 1-hour entries, and a{/mut}",
+        "     {mut}single 1.25× multiplier under-prices a session by about a third.{/mut}"
+      ],
+      "pause": 1.4
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "  {dim}531 in + 22188 cache-read + 3026 cache-write(1h) + 51 out, haiku{/dim}",
+        "",
+        "     1.25×  →  {er}$0.0067873000{/er}",
+        "     2.00×  →  {ok}$0.0090568000{/ok}",
+        "     {dim}the CLI's own total_cost_usd{/dim}  →  {ok}$0.0090568000{/ok}"
+      ],
+      "pause": 2.0
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.07,
+      "lines": [
+        "  {mut}Not recalled — measured. {/mut}{hi}claude -p --output-format json{/hi}{mut} reports what the{/mut}",
+        "  {mut}run cost, which makes it an oracle. A test re-runs it every commit.{/mut}"
+      ],
+      "pause": 2.0
+    },
+    { "type": "clear" },
+    {
+      "type": "out",
+      "speed": 0.08,
+      "lines": ["  {hi}and the graph that actually ran{/hi}"],
+      "pause": 1.0
+    },
+    { "type": "blank" },
+    { "type": "cmd", "text": "localflow graph 62173ece | graphlint check -", "pause": 0.9 },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.05,
+      "lines": [
+        "  {wa}!{/wa} Agent \"session\" returns free text but its result feeds another step.  {dim}missing-schema{/dim}",
+        "  {wa}!{/wa} Agent \"fanout-1\" returns free text but its result feeds another step.  {dim}missing-schema{/dim}",
+        "  {wa}!{/wa} Agent \"fanout-2\" returns free text but its result feeds another step.  {dim}missing-schema{/dim}",
+        "",
+        "  {wa}3 warnings{/wa} {dim}in 1 file{/dim}"
+      ],
+      "pause": 1.6
+    },
+    { "type": "blank" },
+    { "type": "cmd", "text": "localflow graph 62173ece | preflight estimate -", "pause": 0.8 },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.06,
+      "lines": [
+        "  {hi}observed-the-hiko-company-cd{/hi}  {dim}estimated before running{/dim}",
+        "",
+        "  agents        {hi}23{/hi}  {dim}(8–83){/dim}",
+        "  cost       {hi}$2.10{/hi}  {dim}($0.999–$6.48){/dim}"
+      ],
+      "pause": 1.5
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.07,
+      "lines": [
+        "  {mut}graphlint lints the graph you {/mut}{hi}wrote{/hi}{mut}. This is the one that {/mut}{hi}ran{/hi}{mut} — every{/mut}",
+        "  {mut}fan-out is in the transcript, so it can be rebuilt and linted after{/mut}",
+        "  {mut}the fact. Shape is measured; intent is not, and it does not pretend.{/mut}"
+      ],
+      "pause": 2.2
+    },
+    { "type": "clear" },
+    { "type": "cmd", "text": "localflow calibrate > preflight.json", "pause": 0.8 },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.06,
+      "lines": [
+        "  {dim}measured across 11 session(s), 900 model call(s){/dim}",
+        "",
+        "  cacheHitRate          {ok}97.9%{/ok}   {dim}measured, not assumed{/dim}",
+        "",
+        "  {dim}reported, not written:{/dim}",
+        "    {dim}input per call       332,433   p10–p90 27,648–1,070,519{/dim}",
+        "    {dim}output per call        2,413{/dim}"
+      ],
+      "pause": 1.8
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.07,
+      "lines": [
+        "  {mut}preflight's docs say it cannot derive a cache hit rate, because usage{/mut}",
+        "  {mut}rows do not report cache reads. A Claude Code transcript does. That is{/mut}",
+        "  {mut}the number a cost model is most sensitive to, and now it is measured.{/mut}"
+      ],
+      "pause": 2.0
+    },
+    { "type": "blank" },
+    {
+      "type": "out",
+      "speed": 0.07,
+      "lines": [
+        "  {mut}The token counts are printed and {/mut}{hi}not{/hi}{mut} written: a worker profile means one{/mut}",
+        "  {mut}unit of work at 8k input, and a session's 332k is its whole context.{/mut}",
+        "  {mut}Both true, different quantities. Writing one as the other is a 40× lie.{/mut}"
+      ],
+      "pause": 2.2
+    },
+    { "type": "clear" },
+    {
+      "type": "out",
+      "speed": 0.09,
+      "lines": [
+        "  {ac}localflow{/ac}",
+        "",
+        "  {hi}npx localflow{/hi}   {dim}→  http://127.0.0.1:7317{/dim}",
+        "",
+        "  {mut}Reads the registry and transcripts already on your disk. Nothing is{/mut}",
+        "  {mut}sent anywhere, no daemon, no account.{/mut}",
+        "",
+        "  {dim}Watching is the default. Actions are off until you arm them, the server{/dim}",
+        "  {dim}binds to loopback, and it checks Host and Origin — this process can{/dim}",
+        "  {dim}start Claude sessions, so a web page must not be able to reach it.{/dim}",
+        "",
+        "  {ac}unchained-labs.github.io/localflow{/ac}"
+      ],
+      "pause": 1.0
+    },
+    { "type": "hold", "seconds": 3.0, "cursor": true }
+  ]
+}
